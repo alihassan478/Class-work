@@ -1,9 +1,12 @@
 package com.Card;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Deck {
     Card[] cards = new Card[52];
+
+    String[] deck = new String[52];
 
     String[] suits = {"Heart" , "Diamond" , "Spades" , "Clubs"};
 
@@ -19,6 +22,8 @@ public class Deck {
         }
     }
 
+
+
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
@@ -26,5 +31,15 @@ public class Deck {
             str.append(cards[i]).append("\n");
         }
         return str.toString();
+    }
+
+    public void random() {
+
+        for(int i =0; i<52;i++) {
+            Random random = new Random();
+            int r1 = random.nextInt(52);
+            deck[i] = String.valueOf(cards[r1]);
+            System.out.println(deck[i]);
+        }
     }
 }
